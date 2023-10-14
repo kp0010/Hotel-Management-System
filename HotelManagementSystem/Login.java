@@ -42,7 +42,7 @@ public class Login extends JFrame {
         image.setBounds(350,10,200,200);
         add(image);
 
-        setBounds(500,200,600,300);
+        setBounds(500,200,600,250);
         setVisible(true);
     }
         public static void main(String[] args) {
