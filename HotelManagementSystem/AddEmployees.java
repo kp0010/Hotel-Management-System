@@ -5,7 +5,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class AddEmployees extends JFrame {
-
     JTextField nametxt, agetxt, textField_2, salarytxt, phonetxt, aadhartxt, emailtxt;
     JComboBox c1;
 
@@ -27,11 +26,17 @@ public class AddEmployees extends JFrame {
         nametxt.setBounds(200, 30, 150, 27);
         add(nametxt);
 
-        JButton Next = new JButton("SUBMIT");
-        Next.setBounds(200, 420, 150, 30);
+        JButton Next = new JButton("Add Employee");
+        Next.setBounds(55, 420, 130, 30);
         Next.setBackground(Color.BLACK);
         Next.setForeground(Color.WHITE);
         add(Next);
+
+        JButton cancelbtn = new JButton("Cancel");
+        cancelbtn.setForeground(Color.white);
+        cancelbtn.setBackground(Color.black);
+        cancelbtn.setBounds(220, 420, 130, 30);
+        add(cancelbtn);
 
         JLabel Pnrno = new JLabel("AGE");
         Pnrno.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -44,17 +49,17 @@ public class AddEmployees extends JFrame {
 
         JLabel Gender = new JLabel("GENDER");
         Gender.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        Gender.setBounds(60, 120, 150, 27);
+        Gender.setBounds(60, 125, 150, 27);
         add(Gender);
 
         JRadioButton maleradio = new JRadioButton("MALE");
         maleradio.setBackground(Color.WHITE);
-        maleradio.setBounds(200, 120, 70, 27);
+        maleradio.setBounds(200, 125, 70, 27);
         add(maleradio);
 
         JRadioButton femaleradio = new JRadioButton("FEMALE");
         femaleradio.setBackground(Color.WHITE);
-        femaleradio.setBounds(280, 120, 70, 27);
+        femaleradio.setBounds(280, 125, 70, 27);
         add(femaleradio);
 
 
@@ -63,7 +68,7 @@ public class AddEmployees extends JFrame {
         Address.setBounds(60, 170, 150, 27);
         add(Address);
 
-        String course[] = {"Front Desk Clerks", "Porters", "Housekeeping", "Kitchen Staff", "Room Service", "Waiter/Waitress", "Manager", "Accountant", "Chef"};
+        String[] course = {"Front Desk Clerks", "Porters", "Housekeeping", "Kitchen Staff", "Room Service", "Waiter/Waitress", "Manager", "Accountant", "Chef"};
         c1 = new JComboBox(course);
         c1.setBackground(Color.WHITE);
         c1.setBounds(200, 170, 150, 30);
@@ -95,7 +100,6 @@ public class AddEmployees extends JFrame {
         aadhartxt = new JTextField();
         aadhartxt.setBounds(200, 320, 150, 27);
         add(aadhartxt);
-
 
         JLabel email = new JLabel("EMAIL");
         email.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -135,10 +139,10 @@ public class AddEmployees extends JFrame {
                 String gender = null;
 
                 if (maleradio.isSelected()) {
-                    gender = "male";
+                    gender = "Male";
 
                 } else if (femaleradio.isSelected()) {
-                    gender = "female";
+                    gender = "Female";
                 }
 
 
@@ -155,6 +159,12 @@ public class AddEmployees extends JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        cancelbtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                setVisible(false);
             }
         });
 
