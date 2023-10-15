@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.event.*;
 
 
-public class Dashboard extends JFrame {
 
+public class Dashboard extends JFrame {
     public static void main(String[] args) {
         new Dashboard().setVisible(true);
     }
@@ -15,6 +15,8 @@ public class Dashboard extends JFrame {
     public Dashboard() {
         super("HOTEL MANAGEMENT SYSTEM");
 
+
+        setExtendedState(MAXIMIZED_BOTH);
         setForeground(Color.CYAN);
         setLayout(null);
 
@@ -53,7 +55,7 @@ public class Dashboard extends JFrame {
         FlightDetailshello1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 try {
-                    new AddEmployee().setVisible(true);
+                    new AddEmployees().setVisible(true);
                 } catch (Exception e) {
                 }
             }
@@ -95,6 +97,7 @@ public class Dashboard extends JFrame {
 
         setSize(1950, 1090);
         setVisible(true);
+        setLocation(0, 0);
         getContentPane().setBackground(Color.WHITE);
     }
 }

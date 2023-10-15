@@ -114,7 +114,7 @@ public class AddRooms extends JFrame implements ActionListener {
         posterlbl.setBounds(400, 60, 500, 300);
         add(posterlbl);
 
-        setBounds(330, 200, 940, 470);
+        setBounds(550, 250, 940, 470);
         setVisible(true);
     }
 
@@ -129,7 +129,7 @@ public class AddRooms extends JFrame implements ActionListener {
 
             try {
                 Conn conn = new Conn();
-                String query = "insert into Rooms values('" + roomNumber + "', '" + availability + "', '" + cleaningStatus + "', '" + roomPrice + "', '" + bedType + "')";
+                String query = "INSERT INTO rooms values('" + roomNumber + "', '" + availability + "', '" + cleaningStatus + "', '" + roomPrice + "', '" + bedType + "')";
 //                System.out.println(query);
                 conn.s.executeUpdate(query);
 

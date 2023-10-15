@@ -4,12 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class AddEmployee extends JFrame {
+public class AddEmployees extends JFrame {
 
     JTextField nametxt, agetxt, textField_2, salarytxt, phonetxt, aadhartxt, emailtxt;
     JComboBox c1;
 
-    public AddEmployee() {
+    public AddEmployees() {
         getContentPane().setForeground(Color.BLUE);
         getContentPane().setBackground(Color.WHITE);
         setTitle("ADD EMPLOYEE DETAILS");
@@ -160,11 +160,11 @@ public class AddEmployee extends JFrame {
 
         setSize(900, 530);
         setVisible(true);
-        setLocation(530, 200);
+        setLocation(530, 250);
 
     }
 
     public static void main(String[] args) {
-        new AddEmployee();
+        new AddEmployees();
     }
 }
