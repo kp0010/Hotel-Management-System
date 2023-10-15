@@ -3,6 +3,7 @@ package HotelManagementSystem;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.SQLException;
 
 public class Reception extends JFrame implements ActionListener {
 
@@ -77,6 +78,7 @@ public class Reception extends JFrame implements ActionListener {
     searchRoom.setBounds(10, 430, 200, 30);
     searchRoom.setBackground(Color.BLACK);
     searchRoom.setForeground(Color.WHITE);
+    searchRoom.addActionListener(this);
     add(searchRoom);
 
     logout = new JButton("Logout");
@@ -102,6 +104,14 @@ public class Reception extends JFrame implements ActionListener {
   public void actionPerformed(ActionEvent ae) {
     if (ae.getSource() == newCustomer){
       new AddCustomers();
+      setVisible(false);
+    }
+    else if (ae.getSource() == searchRoom) {
+      try {
+        new SearchRoom();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
       setVisible(false);
     }
   }

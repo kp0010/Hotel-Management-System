@@ -25,7 +25,7 @@ public class SearchRoom extends JFrame {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -36,6 +36,8 @@ public class SearchRoom extends JFrame {
                 }
             }
         });
+//        new SearchRoom();
+
     }
     public void close()
     {
@@ -44,47 +46,47 @@ public class SearchRoom extends JFrame {
 
     /**
      * Create the frame.
-     * @throws SQLException
      */
     public SearchRoom() throws SQLException {
-        //conn = Javaconnect.getDBConnection();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getContentPane().setBackground(Color.white);
         setBounds(530, 230, 700, 500);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(contentPane);
-        contentPane.setLayout(null);
+//        contentPane = new JPanel();
+//        setBorder(new EmptyBorder(5, 5, 5, 5));
+//        setContentPane(contentPane);
+        setLayout(null);
+
 
         JLabel lblSearchForRoom = new JLabel("Search For Room");
         lblSearchForRoom.setFont(new Font("Tahoma", Font.PLAIN, 20));
-        lblSearchForRoom.setBounds(250, 11, 186, 31);
-        contentPane.add(lblSearchForRoom);
+        lblSearchForRoom.setBounds(257, 11, 186, 31);
+        add(lblSearchForRoom);
 
         JLabel lblRoomAvailable = new JLabel("Room Bed Type:");
         lblRoomAvailable.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lblRoomAvailable.setBounds(50, 73, 150, 20);
-        contentPane.add(lblRoomAvailable);
+        add(lblRoomAvailable);
 
         JLabel lblRoomType = new JLabel("Room Number");
         lblRoomType.setBounds(23, 162, 96, 14);
-        contentPane.add(lblRoomType);
+        add(lblRoomType);
 
         JLabel lblRoomAvailable_1 = new JLabel("Availability");
         lblRoomAvailable_1.setBounds(175, 162, 120, 14);
-        contentPane.add(lblRoomAvailable_1);
+        add(lblRoomAvailable_1);
 
         JLabel lblPrice_1 = new JLabel("Price");
         lblPrice_1.setBounds(458, 162, 46, 14);
-        contentPane.add(lblPrice_1);
+        add(lblPrice_1);
 
         JLabel l1 = new JLabel("Bed Type");
         l1.setBounds(580, 162, 96, 14);
-        contentPane.add(l1);
+        add(l1);
 
         JCheckBox checkRoom = new JCheckBox("Only display Available");
         checkRoom.setBounds(400, 69, 205, 23);
         checkRoom.setBackground(Color.WHITE);
-        contentPane.add(checkRoom);
+        add(checkRoom);
 
 
         String[] options = {"Single Bed", "Double Bed"};
@@ -92,12 +94,13 @@ public class SearchRoom extends JFrame {
         c1.setBackground(Color.white);
         c1.setForeground(Color.black);
         c1.setBounds(180, 72, 120, 23);
-        contentPane.add(c1);
+        add(c1);
 
         JButton btnSearch = new JButton("Search");
+
         btnSearch.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String SQL = "select * from Room where bedType = '"+c1.getSelectedItem()+"'";
+                String SQL = "select * from Room where bedType = '" + c1.getSelectedItem()+ "'";
                 String SQL2 = "select * from Room where availability = 'Available' AND bedType = '"+c1.getSelectedItem()+"'";
                 try{
                     Conn c = new Conn();
@@ -122,7 +125,7 @@ public class SearchRoom extends JFrame {
         btnSearch.setBounds(200, 400, 120, 30);
         btnSearch.setBackground(Color.BLACK);
         btnSearch.setForeground(Color.WHITE);
-        contentPane.add(btnSearch);
+        add(btnSearch);
 
         JButton btnExit = new JButton("Back");
         btnExit.addActionListener(new ActionListener() {
@@ -135,19 +138,22 @@ public class SearchRoom extends JFrame {
         btnExit.setBounds(380, 400, 120, 30);
         btnExit.setBackground(Color.BLACK);
         btnExit.setForeground(Color.WHITE);
-        contentPane.add(btnExit);
+        add(btnExit);
 
         roomTable = new JTable();
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment( JLabel.LEFT );
-        roomTable.setDefaultRenderer(String.class, centerRenderer);
         roomTable.setBounds(0, 187, 690, 200);
-        contentPane.add(roomTable);
+        roomTable.setTableHeader(null);
+
+        JScrollPane scrollPane = new JScrollPane(roomTable);
+//        scrollPane.setVerticalScrollBarPolicy(
+//                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setBounds(0,187, 683, 200);
+        add(scrollPane);
 
         JLabel lblCleanStatus = new JLabel("Clean Status");
         lblCleanStatus.setBounds(306, 162, 96, 14);
-        contentPane.add(lblCleanStatus);
+        add(lblCleanStatus);
 
-        getContentPane().setBackground(Color.WHITE);
+        setVisible(true);
     }
 }
