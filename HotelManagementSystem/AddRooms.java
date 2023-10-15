@@ -21,7 +21,7 @@ public class AddRooms extends JFrame implements ActionListener {
 
         //Labels
         JLabel heading = new JLabel("Add Rooms");
-        heading.setFont(new Font("Tahoma", Font.BOLD, 18));
+        heading.setFont(new Font("Tahoma", Font.BOLD, 20));
         heading.setBounds(150, 20, 200, 20);
         add(heading);
 
@@ -61,8 +61,6 @@ public class AddRooms extends JFrame implements ActionListener {
         add(tfRoomPrice);
         tfRoomPrice.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent ke) {
-                String value = tfRoomPrice.getText();
-                int l = value.length();
                 if ((((ke.getKeyChar() >= '0') && (ke.getKeyChar() <= '9'))) || ((ke.getKeyChar() == KeyEvent.VK_PERIOD))) {
                     tfRoomPrice.setEditable(true);
                 } else {
@@ -73,19 +71,19 @@ public class AddRooms extends JFrame implements ActionListener {
 
 
         //Combos
-        String availableOptions[] = {"Available", "Occupied"};
+        String[] availableOptions = {"Available", "Occupied"};
         availableCombo = new JComboBox(availableOptions);
         availableCombo.setBounds(200, 130, 150, 30);
         availableCombo.setBackground(Color.white);
         add(availableCombo);
 
-        String cleaningStatusOptions[] = {"Cleaned", "Dirty"};
+        String[] cleaningStatusOptions = {"Cleaned", "Dirty"};
         cleaningStatusCombo = new JComboBox(cleaningStatusOptions);
         cleaningStatusCombo.setBounds(200, 180, 150, 30);
         cleaningStatusCombo.setBackground(Color.white);
         add(cleaningStatusCombo);
 
-        String bedTypeOptions[] = {"Single Bed", "Double Bed"};
+        String[] bedTypeOptions = {"Single Bed", "Double Bed"};
         bedTypeCombo = new JComboBox(bedTypeOptions);
         bedTypeCombo.setBounds(200, 280, 150, 30);
         bedTypeCombo.setBackground(Color.white);
@@ -129,7 +127,7 @@ public class AddRooms extends JFrame implements ActionListener {
 
             try {
                 Conn conn = new Conn();
-                String query = "INSERT INTO rooms values('" + roomNumber + "', '" + availability + "', '" + cleaningStatus + "', '" + roomPrice + "', '" + bedType + "')";
+                String query = "INSERT INTO room values('" + roomNumber + "', '" + availability + "', '" + cleaningStatus + "', '" + roomPrice + "', '" + bedType + "')";
 //                System.out.println(query);
                 conn.s.executeUpdate(query);
 

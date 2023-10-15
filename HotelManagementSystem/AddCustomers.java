@@ -88,7 +88,7 @@ public class AddCustomers extends JFrame implements ActionListener {
 
         try {
             Conn conn = new Conn();
-            String roomq = "SELECT * From rooms WHERE availability = 'Available'";
+            String roomq = "SELECT * From room WHERE availability = 'Available'";
             ResultSet response = conn.s.executeQuery(roomq);
 
             while (response.next()) {
@@ -169,7 +169,7 @@ public class AddCustomers extends JFrame implements ActionListener {
 
             try {
                 String query = "INSERT INTO customer VALUES('" + id + "', '" + number + "', '" + name + "', '" + gender + "', '" + country + "', '" + roomNumber + "', '" + time + "', '" + deposit +"')";
-                String query2 = "UPDATE rooms SET availability = 'Occupied' WHERE roomNumber = '" + roomNumber + "'";
+                String query2 = "UPDATE room SET availability = 'Occupied' WHERE roomNumber = '" + roomNumber + "'";
                 System.out.println(query);
                 System.out.println(query2);
                 Conn conn = new Conn();
