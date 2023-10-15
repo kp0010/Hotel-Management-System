@@ -22,7 +22,7 @@ public class AddCustomers extends JFrame implements ActionListener {
         setLayout(null);
 
         JLabel heading = new JLabel("NEW CUSTOMER FORM");
-        heading.setBounds(100, 20, 300, 30);
+        heading.setBounds(80, 20, 300, 30);
         heading.setFont(new Font("Raleway", Font.BOLD, 20));
         add(heading);
 
@@ -49,6 +49,10 @@ public class AddCustomers extends JFrame implements ActionListener {
         radioGenderFemale.setBackground(Color.white);
         radioGenderFemale.setBounds(280, 120, 80, 25);
         add(radioGenderFemale);
+
+        ButtonGroup genderGroup = new ButtonGroup();
+        genderGroup.add(radioGenderFemale);
+        genderGroup.add(radioGenderMale);
 
         JLabel lblId = new JLabel("ID");
         lblId.setBounds(35, 160, 100, 20);
@@ -159,8 +163,6 @@ public class AddCustomers extends JFrame implements ActionListener {
             String deposit = tfDeposit.getText();
             String gender = null;
 
-            System.out.println(number);
-
             if (radioGenderMale.isSelected()) {
                 gender = "Male";
             } else if (radioGenderFemale.isSelected()) {
@@ -170,15 +172,13 @@ public class AddCustomers extends JFrame implements ActionListener {
             try {
                 String query = "INSERT INTO customer VALUES('" + id + "', '" + number + "', '" + name + "', '" + gender + "', '" + country + "', '" + roomNumber + "', '" + time + "', '" + deposit +"')";
                 String query2 = "UPDATE room SET availability = 'Occupied' WHERE roomNumber = '" + roomNumber + "'";
-                System.out.println(query);
-                System.out.println(query2);
                 Conn conn = new Conn();
                 conn.s.executeUpdate(query);
                 conn.s.executeUpdate(query2);
 
-                JOptionPane.showMessageDialog(null, "New Customer Added Successfully");
-                setVisible(false);
-                new Reception();
+//                JOptionPane.showMessageDialog(null, "New Customer Added Successfully");
+//                setVisible(false);
+//                new Reception();
 
             } catch (Exception e) {
                 e.printStackTrace();

@@ -3,8 +3,6 @@ package HotelManagementSystem;
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

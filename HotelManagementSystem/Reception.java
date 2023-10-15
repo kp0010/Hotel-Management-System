@@ -60,6 +60,7 @@ public class Reception extends JFrame implements ActionListener {
     update.setBounds(10, 310, 200, 30);
     update.setBackground(Color.BLACK);
     update.setForeground(Color.WHITE);
+    update.addActionListener(this);
     add(update);
 
     roomStatus = new JButton("Update Room Status");
@@ -111,6 +112,14 @@ public class Reception extends JFrame implements ActionListener {
         new SearchRoom();
       } catch (SQLException e) {
         e.printStackTrace();
+      }
+      setVisible(false);
+    }
+    else if (ae.getSource() == update) {
+      try {
+        new UpdateRoom();
+      } catch (SQLException e) {
+        throw new RuntimeException(e);
       }
       setVisible(false);
     }

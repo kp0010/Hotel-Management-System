@@ -59,9 +59,9 @@ public class AddRooms extends JFrame implements ActionListener {
         tfRoomPrice = new JTextField();
         tfRoomPrice.setBounds(200, 230, 150, 30);
         add(tfRoomPrice);
-        tfRoomPrice.addKeyListener(new KeyAdapter() {
+       tfRoomPrice.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent ke) {
-                if ((((ke.getKeyChar() >= '0') && (ke.getKeyChar() <= '9'))) || ((ke.getKeyChar() == KeyEvent.VK_PERIOD))) {
+                if ((ke.getKeyChar() >= '0' && ke.getKeyChar() <= '9') || (ke.getKeyChar() == KeyEvent.VK_PERIOD) || (ke.getKeyChar() == KeyEvent.VK_BACK_SPACE) || (ke.getKeyChar() == KeyEvent.VK_DELETE)) {
                     tfRoomPrice.setEditable(true);
                 } else {
                     tfRoomPrice.setEditable(false);
