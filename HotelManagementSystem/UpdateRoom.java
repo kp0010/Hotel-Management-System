@@ -42,10 +42,6 @@ public class UpdateRoom extends JFrame {
         this.dispose();
     }
 
-    /**
-     * Create the frame.
-     * @throws SQLException
-     */
     public UpdateRoom() throws SQLException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(500, 270, 1000, 450);
