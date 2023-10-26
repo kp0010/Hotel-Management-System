@@ -26,6 +26,9 @@ public class AddDrivers extends JFrame implements ActionListener {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
+
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Assets/eleven.jpg"));
         Image i3 = i1.getImage().getScaledInstance(500, 300, Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);

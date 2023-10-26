@@ -51,6 +51,9 @@ public class CustomerInfo extends JFrame {
 		setBounds(530, 200, 900, 600);
 		setLayout(null);
 
+		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+		setIconImage(icon);
+
 		
 		JButton btnExit = new JButton("Back");
 		btnExit.addActionListener(new ActionListener() {

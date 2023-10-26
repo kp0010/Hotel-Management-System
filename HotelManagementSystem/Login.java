@@ -15,6 +15,9 @@ public class Login extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
+
         JLabel user = new JLabel("Username");
         user.setBounds(40, 20, 100, 30);
         add(user);

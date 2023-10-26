@@ -21,6 +21,9 @@ public class AddCustomers extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.white);
         setLayout(null);
 
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
+
         JLabel heading = new JLabel("NEW CUSTOMER FORM");
         heading.setBounds(80, 20, 300, 30);
         heading.setFont(new Font("Raleway", Font.BOLD, 20));

@@ -1,7 +1,6 @@
 package HotelManagementSystem;
 
 
-
 import java.awt.BorderLayout;
 import java.awt.*;
 
@@ -19,7 +18,6 @@ public class PickUp extends JFrame {
     Connection Conn = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    private JPanel contentPane;
     private JTable table;
     Choice c1;
 
@@ -39,6 +37,9 @@ public class PickUp extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(530, 200, 800, 600);
         setLayout(null);
+
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
 
         JLabel lblPickUpService = new JLabel("Pick Up Service");
         lblPickUpService.setFont(new Font("Tahoma", Font.PLAIN, 20));

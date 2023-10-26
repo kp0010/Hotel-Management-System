@@ -1,6 +1,5 @@
 package HotelManagementSystem;
 
-// import javax.management.RuntimeErrorException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -13,6 +12,9 @@ public class Reception extends JFrame implements ActionListener {
   Reception()  {
     getContentPane().setBackground(Color.WHITE);
     setLayout(null);
+
+    Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+    setIconImage(icon);
 
     newCustomer = new JButton("New Customer Forms");
     newCustomer.setBounds(22, 30, 200, 30);

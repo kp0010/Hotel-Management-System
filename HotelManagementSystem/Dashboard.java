@@ -13,46 +13,48 @@ public class Dashboard extends JFrame {
     }
 
     public Dashboard() {
-        super("HOTEL MANAGEMENT SYSTEM");
+        super("BLUE HORIZON MANAGEMENT");
 
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
 
         setExtendedState(MAXIMIZED_BOTH);
         setForeground(Color.CYAN);
         setLayout(null);
 
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Assets/third.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Assets/Dashboardimg.jpg"));
         Image i2 = i1.getImage().getScaledInstance(1950, 1000, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel NewLabel = new JLabel(i3);
         NewLabel.setBounds(0, 0, 1950, 1000);
         add(NewLabel);
 
-        JLabel AirlineManagementSystem = new JLabel("THE TAJ GROUP WELCOMES YOU");
-        AirlineManagementSystem.setForeground(Color.WHITE);
-        AirlineManagementSystem.setFont(new Font("Tahoma", Font.PLAIN, 46));
-        AirlineManagementSystem.setBounds(600, 60, 1000, 85);
-        NewLabel.add(AirlineManagementSystem);
+        JLabel greetinglbl = new JLabel("WELCOME TO THE BLUE HORIZON SUITES");
+        greetinglbl.setForeground(Color.WHITE);
+        greetinglbl.setFont(new Font("SansSerif", Font.BOLD, 51));
+        greetinglbl.setBounds(450, 100, 1500, 85);
+        NewLabel.add(greetinglbl);
 
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenu AirlineSystem = new JMenu("HOTEL MANAGEMENT");
-        AirlineSystem.setForeground(Color.BLUE);
-        menuBar.add(AirlineSystem);
+        JMenu hotelsystem = new JMenu("HOTEL MANAGEMENT");
+        hotelsystem.setForeground(Color.BLACK);
+        menuBar.add(hotelsystem);
 
-        JMenuItem FlightDetails = new JMenuItem("RECEPTION");
-        AirlineSystem.add(FlightDetails);
+        JMenuItem reception = new JMenuItem("RECEPTION");
+        hotelsystem.add(reception);
 
-        JMenu AirlineSystemHello = new JMenu("ADMIN");
-        AirlineSystemHello.setForeground(Color.RED);
-        menuBar.add(AirlineSystemHello);
+        JMenu adminmenu = new JMenu("ADMIN");
+        adminmenu.setForeground(Color.BLACK);
+        menuBar.add(adminmenu);
 
-        JMenuItem FlightDetailshello1 = new JMenuItem("ADD EMPLOYEE");
-        AirlineSystemHello.add(FlightDetailshello1);
+        JMenuItem emp = new JMenuItem("ADD EMPLOYEE");
+        adminmenu.add(emp);
 
-        FlightDetailshello1.addActionListener(new ActionListener() {
+        emp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 try {
                     new AddEmployees().setVisible(true);
@@ -62,10 +64,10 @@ public class Dashboard extends JFrame {
         });
 
 
-        JMenuItem FlightDetailshello2 = new JMenuItem("ADD ROOMS");
-        AirlineSystemHello.add(FlightDetailshello2);
+        JMenuItem rooms = new JMenuItem("ADD ROOMS");
+        adminmenu.add(rooms);
 
-        FlightDetailshello2.addActionListener(new ActionListener() {
+        rooms.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 try {
                     new AddRooms().setVisible(true);
@@ -75,7 +77,7 @@ public class Dashboard extends JFrame {
         });
 
 
-        FlightDetails.addActionListener(new ActionListener() {
+        reception.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 new Reception();
             }
@@ -83,7 +85,7 @@ public class Dashboard extends JFrame {
 
 
         JMenuItem FlightDetailshello3 = new JMenuItem("ADD DRIVERS");
-        AirlineSystemHello.add(FlightDetailshello3);
+        adminmenu.add(FlightDetailshello3);
 
         FlightDetailshello3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {

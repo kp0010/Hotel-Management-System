@@ -5,12 +5,9 @@
  */
 package HotelManagementSystem;
 
-// import java.awt.BorderLayout;
 import java.awt.*;
 
 import javax.swing.JFrame;
-// import javax.swing.JPanel;
-// import javax.swing.border.EmptyBorder;
 
 import net.proteanit.sql.DbUtils;
 
@@ -44,6 +41,9 @@ public class Room extends JFrame {
 	public Room() throws SQLException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 200, 1100, 600);
+
+		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+		setIconImage(icon);
                 
 		ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/eight.jpg"));
 		Image i3 = i1.getImage().getScaledInstance(600, 600,Image.SCALE_DEFAULT);

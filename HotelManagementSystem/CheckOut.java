@@ -36,6 +36,9 @@ public class CheckOut extends JFrame{
         setBounds(530, 200, 800, 294);
         setLayout(null);
 
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
+
         ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/sixth.jpg"));
         Image i3 = i1.getImage().getScaledInstance(400, 225,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);

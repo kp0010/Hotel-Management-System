@@ -13,6 +13,9 @@ public class AddEmployees extends JFrame {
         getContentPane().setBackground(Color.WHITE);
         setTitle("ADD EMPLOYEE DETAILS");
 
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
+
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setSize(778, 486);
         getContentPane().setLayout(null);

@@ -1,4 +1,3 @@
-
 package HotelManagementSystem;
 
 import java.awt.*;
@@ -21,16 +20,6 @@ public class Department extends JFrame {
 
 	
 	public static void main(String[] args) {
-		// EventQueue.invokeLater(new Runnable() {
-		// 	public void run() {
-		// 		try {
-		// 			Department frame = new Department();
-		// 			frame.setVisible(true);
-		// 		} catch (Exception e) {
-		// 			e.printStackTrace();
-		// 		}
-		// 	}
-		// });
 		try {
 			new Department();
 		} catch (SQLException e) {
@@ -46,6 +35,9 @@ public class Department extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(600, 200, 700, 500);
 		setLayout(null);
+
+		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+		setIconImage(icon);
 		
 		table = new JTable();
 		table.setBounds(0, 40, 700, 350);

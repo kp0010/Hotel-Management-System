@@ -19,6 +19,9 @@ public class AddRooms extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.white);
         setLayout(null);
 
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
+
         //Labels
         JLabel heading = new JLabel("Add Rooms");
         heading.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -132,7 +135,7 @@ public class AddRooms extends JFrame implements ActionListener {
                 conn.s.executeUpdate(query);
 
                 JOptionPane.showMessageDialog(null, "New Room Added Sucessfully");
-//                setVisible(false);
+                setVisible(false);
             } catch (Exception e) {
                 e.printStackTrace();
             }

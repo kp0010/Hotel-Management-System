@@ -41,6 +41,9 @@ public class EmployeeInfo extends JFrame {
         setBounds(430, 200, 1000, 600);
         setLayout(null);
 
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        setIconImage(icon);
+
         table = new JTable();
         table.setBounds(0, 34, 1000, 450);
         add(table);

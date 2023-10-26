@@ -38,10 +38,13 @@ public class UpdateStatus extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 950, 500);
 		setLayout(null);
+
+		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+		setIconImage(icon);
 		
 		JLabel lblUpdateCheckStatus = new JLabel("Check-In Details");
-		lblUpdateCheckStatus.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblUpdateCheckStatus.setBounds(124, 11, 222, 25);
+		lblUpdateCheckStatus.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblUpdateCheckStatus.setBounds(124, 25, 222, 25);
 		add(lblUpdateCheckStatus);
                 
                 ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/nine.jpg"));
@@ -60,8 +63,8 @@ public class UpdateStatus extends JFrame {
                     while(rs.next()){
                         c1.add(rs.getString("number"));    
                     }
-                }catch(Exception e){ }
-                c1.setBounds(248, 85, 140, 20);
+                } catch (Exception e){ }
+                c1.setBounds(245, 85, 155, 20);
 		add(c1);
 		
 		JLabel lblNewLabel_1 = new JLabel("Room Number :");
@@ -69,7 +72,7 @@ public class UpdateStatus extends JFrame {
 		add(lblNewLabel_1);
 
 		txt_ID = new JTextField();
-		txt_ID.setBounds(248, 126, 140, 20);
+		txt_ID.setBounds(245, 126, 155, 20);
 		add(txt_ID);
 		
 		JLabel lblNewLabel_2 = new JLabel("Name : ");
@@ -90,22 +93,22 @@ public class UpdateStatus extends JFrame {
 
 		
 		txt_Status = new JTextField();
-		txt_Status.setBounds(248, 171, 140, 20);
+		txt_Status.setBounds(245, 171, 155, 20);
 		add(txt_Status);
 		txt_Status.setColumns(10);
 		
 		txt_Date = new JTextField();
-		txt_Date.setBounds(248, 216, 140, 20);
+		txt_Date.setBounds(245, 216, 155, 20);
 		add(txt_Date);
 		txt_Date.setColumns(10);
 		
 		txt_Time = new JTextField();
-		txt_Time.setBounds(248, 258, 140, 20);
+		txt_Time.setBounds(245, 258, 155, 20);
 		add(txt_Time);
 		txt_Time.setColumns(10);
 		
 		txt_Payment = new JTextField();
-		txt_Payment.setBounds(248, 299, 140, 20);
+		txt_Payment.setBounds(245, 299, 155, 20);
 		add(txt_Payment);
 		txt_Payment.setColumns(10);
 		
