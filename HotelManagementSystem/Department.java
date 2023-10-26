@@ -1,4 +1,3 @@
-
 package HotelManagementSystem;
 
 import java.awt.*;

@@ -1,7 +1,6 @@
 package HotelManagementSystem;
 
 
-
 import java.awt.BorderLayout;
 import java.awt.*;
 
@@ -19,7 +18,6 @@ public class PickUp extends JFrame {
     Connection Conn = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    private JPanel contentPane;
     private JTable table;
     Choice c1;
 

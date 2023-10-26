@@ -1,6 +1,5 @@
 package HotelManagementSystem;
 
-// import javax.management.RuntimeErrorException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

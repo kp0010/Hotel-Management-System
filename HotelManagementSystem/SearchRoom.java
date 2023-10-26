@@ -20,9 +20,6 @@ public class SearchRoom extends JFrame {
     private JTable roomTable;
     JComboBox c1;
 
-    /**
-     * Launch the application.
-     */
     public static void main(String[] args) throws SQLException {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -34,8 +31,6 @@ public class SearchRoom extends JFrame {
                 }
             }
         });
-//        new SearchRoom();
-
     }
     public void close()
     {
@@ -49,9 +44,6 @@ public class SearchRoom extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.white);
         setBounds(530, 230, 700, 500);
-//        contentPane = new JPanel();
-//        setBorder(new EmptyBorder(5, 5, 5, 5));
-//        setContentPane(contentPane);
         setLayout(null);
 
 

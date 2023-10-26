@@ -18,20 +18,7 @@ public class UpdateRoom extends JFrame {
     JComboBox cleaningStatusCombo, availableCombo;
     Choice c1;
 
-    /**
-     * Launch the application.
-     */
     public static void main(String[] args) {
-//        EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                try {
-//                    UpdateRoom frame = new UpdateRoom();
-//                    frame.setVisible(true);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
         try {
             new UpdateRoom();
         } catch (SQLException e) {
@@ -45,9 +32,6 @@ public class UpdateRoom extends JFrame {
     public UpdateRoom() throws SQLException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(500, 270, 1000, 450);
-//        contentPane = new JPanel();
-//        setBorder(new EmptyBorder(5, 5, 5, 5));
-//        setContentPane(contentPane);
         setLayout(null);
 
         ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/seventh.jpg"));
