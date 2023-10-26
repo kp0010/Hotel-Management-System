@@ -61,12 +61,12 @@ public class Login extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == login) {
-            System.out.println("DONE");
+//            System.out.println("DONE");
             Conn conn = new Conn();
             char[] passtemp = password.getPassword();
             String pass = new String(passtemp);
             String query = "select * from login where username='" + username.getText() + "' and password = '" + pass + "'";
-            System.out.println(query);
+//            System.out.println(query);
             try {
                 ResultSet rs = conn.s.executeQuery(query);
                 if (rs.next() == true) {
