@@ -1,5 +1,6 @@
 package HotelManagementSystem;
 
+// import javax.management.RuntimeErrorException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -24,36 +25,42 @@ public class Reception extends JFrame implements ActionListener {
     rooms.setBounds(22, 70, 200, 30);
     rooms.setBackground(Color.BLACK);
     rooms.setForeground(Color.WHITE);
+    rooms.addActionListener(this);
     add(rooms);
 
     department = new JButton("Department");
     department.setBounds(22, 110, 200, 30);
     department.setBackground(Color.BLACK);
     department.setForeground(Color.WHITE);
+    department.addActionListener(this);
     add(department);
 
     allEmployee = new JButton("All Employees");
     allEmployee.setBounds(22, 150, 200, 30);
     allEmployee.setBackground(Color.BLACK);
     allEmployee.setForeground(Color.WHITE);
+    allEmployee.addActionListener(this);
     add(allEmployee);
 
     customers = new JButton("Customer Info");
     customers.setBounds(22, 190, 200, 30);
     customers.setBackground(Color.BLACK);
     customers.setForeground(Color.WHITE);
+    customers.addActionListener(this);
     add(customers);
 
     managerInfo = new JButton("Manager Info");
     managerInfo.setBounds(22, 230, 200, 30);
     managerInfo.setBackground(Color.BLACK);
     managerInfo.setForeground(Color.WHITE);
+    managerInfo.addActionListener(this);
     add(managerInfo);
 
     checkout = new JButton("Checkout");
     checkout.setBounds(22, 270, 200, 30);
     checkout.setBackground(Color.BLACK);
     checkout.setForeground(Color.WHITE);
+    checkout.addActionListener(this);
     add(checkout);
 
     update = new JButton("Update Status");
@@ -74,6 +81,7 @@ public class Reception extends JFrame implements ActionListener {
     pickup.setBounds(22, 390, 200, 30);
     pickup.setBackground(Color.BLACK);
     pickup.setForeground(Color.WHITE);
+    pickup.addActionListener(this);
     add(pickup);
 
     searchRoom = new JButton("Search Room");
@@ -101,7 +109,7 @@ public class Reception extends JFrame implements ActionListener {
   }
 
   public static void main(String[] args)  {
-      new Reception();
+    new Reception();
   }
 
   public void actionPerformed(ActionEvent ae) {
@@ -126,6 +134,30 @@ public class Reception extends JFrame implements ActionListener {
       setVisible(false);
     }
     else if(ae.getSource() == logout) {
+      setVisible(false);
+    }
+    else if (ae.getSource() == rooms) {
+      try {
+        new Room();
+      } catch(SQLException e) {
+        e.printStackTrace();
+      }
+      setVisible(false);
+    }
+    else if (ae.getSource() == department) {
+      try {
+        new Department();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      setVisible(false);
+    }
+    else if (ae.getSource() == managerInfo) {
+      try {
+        new ManagerInfo();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
       setVisible(false);
     }
   }

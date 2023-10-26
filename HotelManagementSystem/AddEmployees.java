@@ -9,7 +9,7 @@ public class AddEmployees extends JFrame {
     JComboBox c1;
 
     public AddEmployees() {
-        getContentPane().setForeground(Color.BLUE);
+        getContentPane().setForeground(Color.BLACK);
         getContentPane().setBackground(Color.WHITE);
         setTitle("ADD EMPLOYEE DETAILS");
 
@@ -113,8 +113,8 @@ public class AddEmployees extends JFrame {
         setVisible(true);
 
         JLabel AddPassengers = new JLabel("ADD EMPLOYEE DETAILS");
-        AddPassengers.setForeground(Color.BLUE);
-        AddPassengers.setFont(new Font("Tahoma", Font.PLAIN, 31));
+        AddPassengers.setForeground(Color.BLACK);
+        AddPassengers.setFont(new Font("Tahoma", Font.BOLD, 31));
         AddPassengers.setBounds(450, 24, 442, 35);
         add(AddPassengers);
 
