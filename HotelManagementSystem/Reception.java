@@ -117,6 +117,7 @@ public class Reception extends JFrame implements ActionListener {
       new AddCustomers();
       setVisible(false);
     }
+
     else if (ae.getSource() == searchRoom) {
       try {
         new SearchRoom();
@@ -125,6 +126,7 @@ public class Reception extends JFrame implements ActionListener {
       }
       setVisible(false);
     }
+
     else if (ae.getSource() == roomStatus) {
       try {
         new UpdateRoom();
@@ -133,9 +135,11 @@ public class Reception extends JFrame implements ActionListener {
       }
       setVisible(false);
     }
+
     else if(ae.getSource() == logout) {
       setVisible(false);
     }
+
     else if (ae.getSource() == rooms) {
       try {
         new Room();
@@ -144,6 +148,7 @@ public class Reception extends JFrame implements ActionListener {
       }
       setVisible(false);
     }
+
     else if (ae.getSource() == department) {
       try {
         new Department();
@@ -152,9 +157,46 @@ public class Reception extends JFrame implements ActionListener {
       }
       setVisible(false);
     }
+
     else if (ae.getSource() == managerInfo) {
       try {
         new ManagerInfo();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      setVisible(false);
+    }
+
+    else if (ae.getSource() == customers) {
+      try {
+        new CustomerInfo();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      setVisible(false);
+    }
+
+    else if (ae.getSource() == allEmployee) {
+      try {
+        new EmployeeInfo();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      setVisible(false);
+    }
+
+    else if (ae.getSource() == checkout) {
+      try {
+        new CheckOut();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      setVisible(false);
+    }
+
+    else if (ae.getSource() == update) {
+      try {
+        new UpdateStatus();
       } catch (SQLException e) {
         e.printStackTrace();
       }

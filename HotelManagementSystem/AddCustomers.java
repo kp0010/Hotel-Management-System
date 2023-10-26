@@ -176,9 +176,9 @@ public class AddCustomers extends JFrame implements ActionListener {
                 conn.s.executeUpdate(query);
                 conn.s.executeUpdate(query2);
 
-//                JOptionPane.showMessageDialog(null, "New Customer Added Successfully");
-//                setVisible(false);
-//                new Reception();
+                JOptionPane.showMessageDialog(null, "New Customer Added Successfully");
+                setVisible(false);
+                new Reception();
 
             } catch (Exception e) {
                 e.printStackTrace();
