@@ -202,5 +202,14 @@ public class Reception extends JFrame implements ActionListener {
       }
       setVisible(false);
     }
+
+    else if (ae.getSource() == pickup) {
+      try {
+        new PickUp();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      setVisible(false);
+    }
   }
 }
