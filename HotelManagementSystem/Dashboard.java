@@ -8,12 +8,19 @@ import java.awt.event.*;
 
 
 public class Dashboard extends JFrame {
+
+    public Dashboard dash = null;
+
     public static void main(String[] args) {
-        new Dashboard().setVisible(true);
+        Dashboard dash = new Dashboard();
+        dash.setVisible(true);
     }
 
     public Dashboard() {
+
         super("BLUE HORIZON MANAGEMENT");
+
+        dash = this;
 
         Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
@@ -79,7 +86,7 @@ public class Dashboard extends JFrame {
 
         reception.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                new Reception();
+                new Reception(dash);
             }
         });
 

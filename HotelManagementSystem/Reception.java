@@ -9,7 +9,20 @@ public class Reception extends JFrame implements ActionListener {
 
   JButton newCustomer, rooms, department, allEmployee, customers, managerInfo, checkout, update, roomStatus, pickup, searchRoom, logout;
 
-  Reception()  {
+  public Dashboard dashb = null;
+
+
+  Reception() {
+    makeReception();
+  }
+
+  Reception(Dashboard dash) {
+    this.dashb = dash;
+    makeReception();
+  }
+
+  public void makeReception() {
+
     getContentPane().setBackground(Color.WHITE);
     setLayout(null);
 
@@ -107,7 +120,6 @@ public class Reception extends JFrame implements ActionListener {
     image.setBounds(250, 30, 500, 470);
     add(image);
 
-
     setBounds(550, 250, 800, 570);
     setVisible(true);
   }
@@ -141,7 +153,10 @@ public class Reception extends JFrame implements ActionListener {
     }
 
     else if(ae.getSource() == logout) {
-      setVisible(false);
+      try {
+        dashb.dispose();
+      } catch (Exception ignored) {}
+      this.dispose();
     }
 
     else if (ae.getSource() == rooms) {
