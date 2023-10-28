@@ -65,6 +65,10 @@ public class AddEmployees extends JFrame {
         femaleradio.setBounds(280, 125, 70, 27);
         add(femaleradio);
 
+        ButtonGroup genderGroup = new ButtonGroup();
+        genderGroup.add(maleradio);
+        genderGroup.add(femaleradio);
+
 
         JLabel Address = new JLabel("JOB");
         Address.setFont(new Font("Tahoma", Font.PLAIN, 17));
