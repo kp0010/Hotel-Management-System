@@ -1,13 +1,10 @@
 package HotelManagementSystem;
 
-import java.awt.BorderLayout;
 import java.awt.*;
-import java.awt.EventQueue;
 
 
 import java.sql.*;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 import java.awt.Font;
 import java.awt.event.*;
@@ -36,19 +33,19 @@ public class CheckOut extends JFrame{
         setBounds(530, 200, 800, 294);
         setLayout(null);
 
-        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
-        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/sixth.jpg"));
+        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/CheckOut.jpg"));
         Image i3 = i1.getImage().getScaledInstance(400, 225,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel l1 = new JLabel(i2);
-        l1.setBounds(300,0,500,225);
+        l1.setBounds(300,20,500,200);
         add(l1);
 
         JLabel lblCheckOut = new JLabel("Check Out ");
-        lblCheckOut.setFont(new Font("Tahoma", Font.PLAIN, 20));
-        lblCheckOut.setBounds(70, 11, 140, 35);
+        lblCheckOut.setFont(new Font("Tahoma", Font.BOLD, 23));
+        lblCheckOut.setBounds(110, 15, 140, 35);
         add(lblCheckOut);
 
         JLabel lblName = new JLabel("Number :");
@@ -66,26 +63,27 @@ public class CheckOut extends JFrame{
         c1.setBounds(130, 82, 150, 20);
         add(c1);
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("Assets/tick.png"));
+        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("Assets/Tick.png"));
         Image i5 = i4.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
         ImageIcon i6 = new ImageIcon(i5);
         JButton l2 = new JButton(i6);
+
+        l2.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+
         l2.setBounds(290,82,20,20);
         add(l2);
 
         l2.addActionListener(new ActionListener(){
 
             public void actionPerformed(ActionEvent ae){
-                System.out.println("Hi");
                 try{
 
                     Conn c = new Conn();
                     String number = c1.getSelectedItem();
-                    ResultSet rs = c.s.executeQuery("select * from customer where number = "+number);
+                    ResultSet rs = c.s.executeQuery("select * from customer where number = " + number);
 
                     if(rs.next()){
-                        System.out.println("clicked");
-                        t1.setText(rs.getString("room_number"));
+                        t1.setText(rs.getString("roomNumber"));
                     }
                 }catch(Exception e){ }
             }
@@ -125,7 +123,7 @@ public class CheckOut extends JFrame{
                 }
             }
         });
-        btnCheckOut.setBounds(50, 200, 100, 25);
+        btnCheckOut.setBounds(40, 200, 100, 25);
         btnCheckOut.setBackground(Color.BLACK);
         btnCheckOut.setForeground(Color.WHITE);
         add(btnCheckOut);
@@ -137,7 +135,7 @@ public class CheckOut extends JFrame{
                 setVisible(false);
             }
         });
-        btnExit.setBounds(160, 200, 100, 25);
+        btnExit.setBounds(190, 200, 100, 25);
         btnExit.setBackground(Color.BLACK);
         btnExit.setForeground(Color.WHITE);
         add(btnExit);

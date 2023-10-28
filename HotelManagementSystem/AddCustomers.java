@@ -21,7 +21,7 @@ public class AddCustomers extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.white);
         setLayout(null);
 
-        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
         JLabel heading = new JLabel("NEW CUSTOMER FORM");
@@ -68,7 +68,7 @@ public class AddCustomers extends JFrame implements ActionListener {
         comboId.setBounds(200, 160, 150, 25);
         add(comboId);
 
-        JLabel lblNumber = new JLabel("Number");
+        JLabel lblNumber = new JLabel("ID Number");
         lblNumber.setBounds(35, 200, 100, 20);
         lblNumber.setFont(new Font("Raleway", Font.PLAIN, 20));
         add(lblNumber);
@@ -90,24 +90,6 @@ public class AddCustomers extends JFrame implements ActionListener {
         lblRoom.setBounds(35, 280, 150, 20);
         lblRoom.setFont(new Font("Raleway", Font.PLAIN, 20));
         add(lblRoom);
-
-        chRoom = new Choice();
-
-        try {
-            Conn conn = new Conn();
-            String roomq = "SELECT * From room WHERE availability = 'Available'";
-            ResultSet response = conn.s.executeQuery(roomq);
-
-            while (response.next()) {
-                chRoom.add(response.getString("roomNumber"));
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        chRoom.setBounds(200, 280, 150, 25);
-        add(chRoom);
 
         JLabel lblTime = new JLabel("Check-in Time");
         lblTime.setBounds(35, 320, 150, 20);
@@ -144,14 +126,33 @@ public class AddCustomers extends JFrame implements ActionListener {
         btnCancel.addActionListener(this);
         add(btnCancel);
 
-        ImageIcon posterImg = new ImageIcon(ClassLoader.getSystemResource("Assets/fifth.png"));
-        Image img = posterImg.getImage().getScaledInstance(300,400, Image.SCALE_DEFAULT);
+        ImageIcon posterImg = new ImageIcon(ClassLoader.getSystemResource("Assets/NewCustomers.png"));
+        Image img = posterImg.getImage().getScaledInstance(500,350, Image.SCALE_DEFAULT);
         ImageIcon posterImg2 = new ImageIcon(img);
         JLabel finalImage = new JLabel(posterImg2);
-        finalImage.setBounds(400, 50, 300,400);
+        finalImage.setBounds(400, 50, 500,400);
         add(finalImage);
 
-        setBounds(550, 250, 800, 550);
+        chRoom = new Choice();
+        setVisible(true);
+
+        try {
+            Conn conn = new Conn();
+            String roomq = "SELECT * From room WHERE availability = 'Available'";
+            ResultSet response = conn.s.executeQuery(roomq);
+
+            while (response.next()) {
+                chRoom.add(response.getString("roomNumber"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        chRoom.setBounds(200, 280, 150, 25);
+        add(chRoom);
+
+        setBounds(550, 250, 930, 550);
         setVisible(true);
     }
 

@@ -36,7 +36,7 @@ public class Department extends JFrame {
 		setBounds(600, 200, 700, 500);
 		setLayout(null);
 
-		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
 		setIconImage(icon);
 		
 		table = new JTable();

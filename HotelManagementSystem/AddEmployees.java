@@ -13,7 +13,7 @@ public class AddEmployees extends JFrame {
         getContentPane().setBackground(Color.WHITE);
         setTitle("ADD EMPLOYEE DETAILS");
 
-        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -122,7 +122,7 @@ public class AddEmployees extends JFrame {
         add(AddPassengers);
 
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Assets/tenth.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Assets/AddEmployee.png"));
         Image i3 = i1.getImage().getScaledInstance(500, 500, Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel image = new JLabel(i2);

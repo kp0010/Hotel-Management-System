@@ -46,7 +46,7 @@ public class SearchRoom extends JFrame {
         setBounds(530, 230, 700, 500);
         setLayout(null);
 
-        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
 

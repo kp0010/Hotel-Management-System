@@ -13,7 +13,7 @@ public class Reception extends JFrame implements ActionListener {
     getContentPane().setBackground(Color.WHITE);
     setLayout(null);
 
-    Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+    Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
     setIconImage(icon);
 
     newCustomer = new JButton("New Customer Forms");
@@ -100,7 +100,9 @@ public class Reception extends JFrame implements ActionListener {
     logout.addActionListener(this);
     add(logout);
 
-    ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Assets/fourth.jpg"));
+    ImageIcon tempraw = new ImageIcon(ClassLoader.getSystemResource("Assets/Reception2.jpg"));
+    Image temp = tempraw.getImage().getScaledInstance(750, 500, Image.SCALE_DEFAULT);
+    ImageIcon i1 = new ImageIcon(temp);
     JLabel image = new JLabel(i1);
     image.setBounds(250, 30, 500, 470);
     add(image);

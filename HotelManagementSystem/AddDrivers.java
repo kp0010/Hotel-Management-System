@@ -3,10 +3,7 @@ package HotelManagementSystem;
 
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.*;
 import java.awt.event.*;
-import java.sql.*;
-import java.util.*;
 
 public class AddDrivers extends JFrame implements ActionListener {
 
@@ -26,11 +23,11 @@ public class AddDrivers extends JFrame implements ActionListener {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Assets/eleven.jpg"));
-        Image i3 = i1.getImage().getScaledInstance(500, 300, Image.SCALE_DEFAULT);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Assets/AddDrivers.png"));
+        Image i3 = i1.getImage().getScaledInstance(500, 350, Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel l15 = new JLabel(i2);
         l15.setBounds(400, 30, 500, 370);

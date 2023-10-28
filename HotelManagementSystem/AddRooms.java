@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 
 
 //Todo: Uncomment out the Conn declaration and Method used after making conn class
-public class AddRooms extends JFrame implements ActionListener {
+    public class AddRooms extends JFrame implements ActionListener {
 
     JButton addRoomsbtn, cancelbtn;
     JTextField tfroom, tfRoomPrice;
@@ -19,7 +19,7 @@ public class AddRooms extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.white);
         setLayout(null);
 
-        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
         //Labels
@@ -110,9 +110,13 @@ public class AddRooms extends JFrame implements ActionListener {
 
 
         //Image
-        ImageIcon posterimg = new ImageIcon(ClassLoader.getSystemResource("Assets/twelve.jpg"));
-        JLabel posterlbl = new JLabel(posterimg);
-        posterlbl.setBounds(400, 60, 500, 300);
+        ImageIcon tempraw = new ImageIcon(ClassLoader.getSystemResource("Assets/AddRoom.jpg"));
+        Image temp = tempraw.getImage().getScaledInstance(500, 350, Image.SCALE_DEFAULT);
+        ImageIcon finalimg = new ImageIcon(temp);
+        JLabel posterlbl = new JLabel(finalimg);
+
+        posterlbl.setBounds(400, 35, 500, 350);
+//        1920×1278
         add(posterlbl);
 
         setBounds(550, 250, 940, 470);

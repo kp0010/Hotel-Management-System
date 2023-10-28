@@ -1,12 +1,9 @@
 package HotelManagementSystem;
 
-import java.awt.BorderLayout;
 import java.awt.*;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -34,14 +31,14 @@ public class UpdateRoom extends JFrame {
         setBounds(500, 270, 1000, 450);
         setLayout(null);
 
-        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
-        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/seventh.jpg"));
-        Image i3 = i1.getImage().getScaledInstance(550, 250,Image.SCALE_DEFAULT);
+        ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/UpdateRoom.jpg"));
+        Image i3 = i1.getImage().getScaledInstance(550, 370,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i3);
         JLabel l1 = new JLabel(i2);
-        l1.setBounds(375,70,600,250);
+        l1.setBounds(375,20,600,370);
         add(l1);
 
         JLabel lblUpdateRoomStatus = new JLabel("Update Room Status");

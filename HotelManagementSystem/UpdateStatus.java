@@ -1,11 +1,9 @@
 package HotelManagementSystem;
 
-import java.awt.BorderLayout;
 import java.awt.*;
 
 import java.sql.*;	
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -39,7 +37,7 @@ public class UpdateStatus extends JFrame {
 		setBounds(500, 200, 950, 500);
 		setLayout(null);
 
-		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
 		setIconImage(icon);
 		
 		JLabel lblUpdateCheckStatus = new JLabel("Check-In Details");
@@ -47,7 +45,7 @@ public class UpdateStatus extends JFrame {
 		lblUpdateCheckStatus.setBounds(124, 25, 222, 25);
 		add(lblUpdateCheckStatus);
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/nine.jpg"));
+                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Assets/CheckIn.jpg"));
                 JLabel l1 = new JLabel(i1);
                 l1.setBounds(450,70,476,270);
                 add(l1);

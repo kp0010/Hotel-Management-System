@@ -1,11 +1,9 @@
 package HotelManagementSystem;
 
-import java.awt.BorderLayout;
 import java.awt.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 import net.proteanit.sql.DbUtils;
 import java.sql.*;	
@@ -51,7 +49,7 @@ public class CustomerInfo extends JFrame {
 		setBounds(530, 200, 900, 600);
 		setLayout(null);
 
-		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+		Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
 		setIconImage(icon);
 
 		

@@ -1,12 +1,10 @@
 package HotelManagementSystem;
 
 
-import java.awt.BorderLayout;
 import java.awt.*;
 
 import java.sql.*;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 import net.proteanit.sql.DbUtils;
 
@@ -38,7 +36,7 @@ public class PickUp extends JFrame {
         setBounds(530, 200, 800, 600);
         setLayout(null);
 
-        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/icon.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
         JLabel lblPickUpService = new JLabel("Pick Up Service");
