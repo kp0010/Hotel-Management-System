@@ -22,6 +22,9 @@ public class Dashboard extends JFrame {
 
         dash = this;
 
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+//        setUndecorated(true);
+
         Image icon = Toolkit.getDefaultToolkit().getImage("Assets/Icon.png");
         setIconImage(icon);
 
@@ -106,7 +109,7 @@ public class Dashboard extends JFrame {
 
         setSize(1950, 1090);
         setVisible(true);
-        setLocation(0, 0);
+        setLocation(-10, 0);
         getContentPane().setBackground(Color.WHITE);
     }
 }
